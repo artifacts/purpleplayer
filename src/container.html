@@ -1,0 +1,221 @@
+<!--
+ Copyright (c) 2010-2011, artifacts Software GmbH & Co. KG
+ All rights reserved.
+
+ BSD License
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+     * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+     * Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in the
+       documentation and/or other materials provided with the distribution.
+     * Neither the name of artifacts Software GmbH & Co. KG nor the
+       names of its contributors may be used to endorse or promote products
+       derived from this software without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY artifacts Software GmbH & Co. KG ''AS IS'' AND ANY
+ EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL artifacts Software GmbH & Co. KG BE LIABLE FOR ANY
+ DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>PurplePlayer</title>
+
+	<style type="text/css">
+
+	html {
+	    height: 100%;
+	}
+	body {
+	    height: 100%;
+	    margin: 0;
+	    background-repeat: no-repeat;
+		background-color: #222;
+		background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#111));								
+	}	
+	
+	/* centers the player on the page */
+	.pp_container {
+	    width: 320px;
+		height: 230px;
+	    margin-right: auto;
+	    margin-left: auto;
+		padding-top: 200px;
+	}
+		
+	/* user interface sprite img */
+	.pp_ui {
+		background:url(purpleplayer.png) no-repeat top left;						
+	}
+	/* the background for our animation */
+	.pp_ani {
+		background: -webkit-gradient(linear, left top, left bottom, from(#494b4d), to(#2c2e2e));								
+		background-color: #ddd;
+		width: 320px;
+		height: 200px;
+	}
+	/* the info backside */
+	.pp_info {
+		background: -webkit-gradient(linear, left top, left bottom, from(#494b4d), to(#2c2e2e));						
+		width: 320px;
+		height: 200px;
+	}	
+	/* the toolbar */
+	.pp_toolbar {
+		width: 320px;
+		height: 30px;
+		background-repeat: repeat-x;
+		background-position: 0 -62px;				
+	}
+	/* play button */
+	.pp_btplay {
+		width: 34px;
+		height: 30px;
+		float:left;
+	}
+	.pp_btplay {
+		width: 34px;
+		height: 30px;
+		float:left;
+	}
+	.pp_btplay_hi {
+		background-position: 0 -30px;			
+	}
+	/* purple button */
+	.pp_btpurple {
+		background-position:-38px 0px;			
+		width: 79px;
+		height: 30px;
+		float:right;			
+	}
+	.pp_logo {
+		margin-left: auto;
+		margin-right: auto;		
+	}
+	.pp_icon {
+		background-position:-106px -115px;			
+		width: 135px;
+		height: 125px;		
+	}
+	.pp_button {
+		cursor: pointer;
+	}
+	.pp_madewith {
+		top: 30px;
+		background-position:-15px -217px;			
+		width: 79px;
+		height: 28px;		
+	}
+	.pp_flexspace {
+		height: 32px;
+	}
+	.clear {
+		clear:left;
+	}
+	
+	/* the whole player */
+	
+	div#player {
+		background-color: #222;
+		position: relative;
+		width: 320px;
+		height: 230px;
+		-webkit-perspective: 1000;
+	}
+	div#player > div {
+		position: absolute;
+		width: 320px;
+		height: 230px;
+		-webkit-transition-duration: 1.25s;
+		-webkit-backface-visibility: hidden;
+	}	
+	
+	div#player div.pp_front {
+	}
+	div#player.flip div.pp_front {
+		-webkit-transform: rotateY(180deg);
+	}
+	div#player div.pp_back {
+		-webkit-transform: rotateY(180deg);
+	}
+	div#player.flip div.pp_back {
+		-webkit-transform: rotateY(360deg);
+	}	
+	
+				
+	</style>
+	
+	<script language="JavaScript">
+		function pp_flip () {
+			var plyr = document.getElementById('player');
+			plyr.className = plyr.className ? '' : 'flip';
+			return false;
+		}
+		
+		function pp_togglePlay() {
+			alert('play');
+		}
+		
+		function pp_about() {
+			document.location.href = "http://www.purpleanimator.com";
+		}
+		
+		function pp_btn(type, obj, hi) {			
+			var x,y;
+			switch (type) {
+			 	case "play":
+					x=0;
+				break;
+			  	case "purple":
+					x=-38;
+				break;
+			}
+			y=hi?-30:0;
+			obj.style.backgroundPosition=x+'px '+y+'px';
+		}		
+	</script>	
+</head>
+<body>
+	<div class="pp_container">
+		<div id="player" class="">
+				<div class="pp_front">
+					<div class="pp_ani">
+						
+					</div>
+					<div class="pp_ui pp_toolbar">
+						<div class="pp_ui pp_button pp_btplay" onclick="pp_togglePlay();" onmousedown="pp_btn('play', this, true)" onmouseup="pp_btn('play', this, false)" onmouseout="pp_btn('play', this, false)"></div>
+						<div class="pp_ui pp_button pp_btpurple" onclick="pp_flip();" onmousedown="pp_btn('purple', this, true)" onmouseup="pp_btn('purple', this, false)" onmouseout="pp_btn('purple', this, false)"></div>
+						<div class="clear"></div>
+					</div>				
+				</div>
+				<div class="pp_back">
+					<div class="pp_info" onclick="pp_about()">
+						<div class="pp_flexspace"></div>
+						<div class="pp_ui pp_button pp_logo pp_madewith"></div>
+						<div class="pp_ui pp_button pp_logo pp_icon"></div>
+					</div>
+					<div class="pp_ui pp_toolbar">
+						<div class="pp_ui pp_button pp_btplay" onclick="pp_togglePlay();" onmousedown="pp_btn('play', this, true)" onmouseup="pp_btn('play', this, false)" onmouseout="pp_btn('play', this, false)"></div>
+						<div class="pp_ui pp_button pp_btpurple" onclick="pp_flip();" onmousedown="pp_btn('purple', this, true)" onmouseup="pp_btn('purple', this, false)" onmouseout="pp_btn('purple', this, false)"></div>
+						<div class="clear"></div>
+					</div>				
+				</div>
+		</div>
+
+	</div>
+</body>
+</html>

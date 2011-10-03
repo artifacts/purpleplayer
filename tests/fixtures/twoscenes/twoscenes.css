@@ -1,0 +1,84 @@
+body { margin: 0px; padding: 0px; background: #303030; -webkit-transform: translate3d(0,0,0); }
+.pNode { margin: 0px; padding: 0px; }
+.pLevel0 { position: relative; top: 0px; left: 0px; width: 768px; height: 350px; overflow: hidden; border: 0px solid white; background: #000000; }
+.pLevel1 { position: relative; top: 0px; left: 0px; width: 768px; height: 350px; overflow: hidden; border: 0px solid green; background: #000000; }
+
+.pLevel2 { position: absolute; opacity: 0.0; }
+.pImage { position: relative; border: 0px; }
+
+#p_testing__Neue_20Szene__Google_20Logo {
+	height: 110px;
+	left: 102px;
+	top: 50px;
+	width: 276px;
+	z-index: 0;
+}
+
+@-webkit-keyframes p_testing__Neue_20Szene__Google_20Logo_track0 {
+	  0.00% { -webkit-animation-timing-function: linear; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px) rotateZ(0rad) scale3d(1, 1, 1); }
+	 47.47% { -webkit-animation-timing-function: linear; opacity: 1; -webkit-transform: translate3d(302px, 2px, 0px) rotateZ(0rad) scale3d(1, 1, 1); }
+	100.00% { -webkit-animation-timing-function: linear; opacity: 1; -webkit-transform: translate3d(146px, 225px, 0px) rotateZ(0rad) scale3d(1, 1, 1); }
+}
+
+#p_testing__Neue_20Szene__Google_20Logo.track0 {
+	-webkit-animation-delay: 0s;
+	-webkit-animation-direction: normal;
+	-webkit-animation-duration: 3.96s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-name: p_testing__Neue_20Szene__Google_20Logo_track0;
+}
+
+#p_testing__Neue_20Szene__Box {
+	height: 120px;
+	left: 570px;
+	top: 45px;
+	width: 96px;
+	z-index: 1;
+}
+
+@-webkit-keyframes p_testing__Neue_20Szene__Box_track0 {
+	  0.00% { -webkit-animation-timing-function: linear; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px) rotateZ(0rad) scale3d(1, 1, 1); }
+	100.00% { -webkit-animation-timing-function: linear; opacity: 1; -webkit-transform: translate3d(-455px, 152px, 0px) rotateZ(0rad) scale3d(1, 1, 1); }
+}
+
+#p_testing__Neue_20Szene__Box.track0 {
+	-webkit-animation-delay: 0.32s;
+	-webkit-animation-direction: normal;
+	-webkit-animation-duration: 2.36s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-name: p_testing__Neue_20Szene__Box_track0;
+}
+
+#p_testing__Neue_20Szene {
+	-webkit-animation-duration: 3.960s;
+	-webkit-animation-name: none;
+	-webkit-animation-timing-function: linear;
+}
+
+#p_testing__Neue_20Szene_201__Switch_20Off {
+	height: 148px;
+	left: 121px;
+	top: 79px;
+	width: 134px;
+	z-index: 0;
+}
+
+@-webkit-keyframes p_testing__Neue_20Szene_201__Switch_20Off_track0 {
+	  0.00% { -webkit-animation-timing-function: linear; opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px) rotateZ(0rad) scale3d(1, 1, 1); }
+	100.00% { -webkit-animation-timing-function: linear; opacity: 1; -webkit-transform: translate3d(260px, 90px, 0px) rotateZ(0.6981rad) scale3d(1.49, 1.01, 1); }
+}
+
+#p_testing__Neue_20Szene_201__Switch_20Off.track0 {
+	-webkit-animation-delay: 0s;
+	-webkit-animation-direction: normal;
+	-webkit-animation-duration: 2.96s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-name: p_testing__Neue_20Szene_201__Switch_20Off_track0;
+}
+
+#p_testing__Neue_20Szene_201 {
+	-webkit-animation-duration: 2.960s;
+	-webkit-animation-name: none;
+	-webkit-animation-timing-function: linear;
+}
+
