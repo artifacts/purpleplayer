@@ -11,7 +11,7 @@
  * Redistributions in binary form must reproduce the above copyright
  notice, this list of conditions and the following disclaimer in the
  documentation and/or other materials provided with the distribution.
- * Neither the name of artifacts Software GmbH & Co. KG nor the
+ * Neither the name of BILD digital GmbH & Co. KG nor the
  names of its contributors may be used to endorse or promote products
  derived from this software without specific prior written permission.
  
@@ -227,7 +227,7 @@ function PurplePlayer(options) {
 
 // PurplePlayer namespace
 var PP = {
-    name: "Namespace for PurplePlayer",
+    name: "http://www.purpleanimator.com/js/purpleplayer",
     HOMEPAGE: "http://www.purpleanimator.com",
 }
 
@@ -298,7 +298,7 @@ PP.Player = function(options) {
     this.stateController = new PP.StateController(this.playerDiv);
     this.controlPanel = null;
     this.stage = null;
-    if(this.isWebkit()) {
+    if(this.isBrowserSupported()) {
         this.buildSkin();
         this.load();
     }
@@ -306,11 +306,14 @@ PP.Player = function(options) {
 
 PP.Player.prototype = {
 
-    isWebkit: function() {
+    isBrowserSupported: function() {
         var self = this;
-        if($.browser.webkit) {
+        if($.browser.webkit || ($.browser.mozilla && parseInt($.browser.version, 10) > 5) ) {        
             return true;
         } else {
+            alert("Browser not supported");
+        }
+/*        } else {
             var w = this.playerDiv.width();
             var h = this.playerDiv.height();
             var msg = $("<div>")
@@ -323,7 +326,8 @@ PP.Player.prototype = {
                 })
                 .html("<iframe width=\""+w+"\" height=\""+h+"\" src=\"http://www.purpleanimator.com/no_webkit/index.html?w="+w+"&h="+h+"\" frameborder=\"0\"/>")
                 .appendTo(this.playerDiv);
-        }
+*/
+//        }
     },
 
     buildSkin: function() {
@@ -828,6 +832,7 @@ PP.Loader.prototype = {
 
             var wrapperDiv = $('<div>')
                 .css('-webkit-transform', 'translateX(-1024px)')
+                .css('-moz-transform', 'translateX(-1024px)')
                 .append(video)
                 .appendTo($('body'));
 
@@ -1098,6 +1103,7 @@ PP.Scene.prototype = {
             // this is paused
             this.view.children().each(function(index) {
                 $(this).css('-webkit-animation-play-state', 'running');
+                $(this).css('-moz-animation-play-state', 'running');
             });
         }
 
@@ -1126,6 +1132,7 @@ PP.Scene.prototype = {
         this.animationState = "paused";
         this.view.children().each(function(index) {
             $(this).css('-webkit-animation-play-state', 'paused');
+            $(this).css('-moz-animation-play-state', 'paused');
         });
 
         if(this.hasSubScenes()) {

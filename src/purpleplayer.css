@@ -11,7 +11,7 @@
      * Redistributions in binary form must reproduce the above copyright
        notice, this list of conditions and the following disclaimer in the
        documentation and/or other materials provided with the distribution.
-     * Neither the name of artifacts Software GmbH & Co. KG nor the
+     * Neither the name of BILD digital GmbH & Co. KG nor the
        names of its contributors may be used to endorse or promote products
        derived from this software without specific prior written permission.
 
@@ -39,12 +39,11 @@ body {
 }
 /* the background for our animation */
 .pp_ani {
-/*	background: -webkit-gradient(linear, left top, left bottom, from(#494b4d), to(#2c2e2e));*/
 	background-color: #ddd;
 }
 /* the info backside */
 .pp_info {
-	background: -webkit-gradient(linear, left top, left bottom, from(#494b4d), to(#2c2e2e));
+    background-color: #ddd;
 	width: 100%;
 	height: 100%;
 }	
@@ -115,18 +114,16 @@ body {
 div .player {
 	background-color: #222;
 	-webkit-perspective: 1000;
+    -moz-perspective: 1000;
 }
 div .player > div {
 	position: absolute;
 	-webkit-transition-duration: 1.25s;
 	-webkit-backface-visibility: hidden;
+    -moz-transition-duration: 1.25s;
+    -moz-backface-visibility: hidden;
 }	
 
-/*div .player div.pp_front {
-}
-div .player.flip div.pp_front {
-	-webkit-transform: rotateY(180deg);
-}*/
 div .player div.pp_back {
 	opacity: 0;
 }
