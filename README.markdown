@@ -13,3 +13,5 @@ Purple supports webkit-compatible browsers, such as Safari browser, mobile Safar
 Even Internet Explorer 10 has no support for keyframe animations. Emulating this is certainly possible and done in other players, but our focus lies on delivering best mobile experience.
 If you feel like something is missing (like IE or Opera support), and you want to contribute don't hesitate and send us a patch or contact us!
 
+www.purpleanimator.com
+support@purpleanimator.com
